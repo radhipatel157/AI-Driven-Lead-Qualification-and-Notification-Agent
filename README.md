@@ -1,46 +1,76 @@
-# AI-Driven Lead Qualification and Notification Agent
+# 🚀 AI-Driven Lead Qualification & Notification Agent
 
-Automated lead classification and notification system powered by n8n workflows, Google Gemini, and Gmail API.
+A fully automated system that classifies, scores, and routes **500+ leads weekly** using AI workflows powered by **n8n**, **Google Gemini**, and the **Gmail API**.
 
-## Overview
+---
 
-This system processes over 500 form submissions weekly, scoring and qualifying leads using AI via Google Gemini, and auto-notifying stakeholders through intelligent routing.
+## ✨ Overview
 
-## Features
+Harness the power of AI to streamline your lead management process. This system automates the entire lifecycle — from form submission to stakeholder notification — reducing manual triage by **80%** and improving response times by **5×**.
 
-- **Form Integration**: Captures submissions via HTTP request triggered by form activity.
-- **AI-Based Scoring**: Utilizes Google Gemini for message analysis and lead qualification.
-- **Dynamic Routing**: Routes qualified leads to the appropriate team based on classification.
-- **Instant Notifications**: Sends real-time email alerts using the Gmail API.
-- **Modular Workflows**: Decoupled into classification and notification flows for scalability.
+---
 
-## Workflow Breakdown
+## 🔧 Key Features
 
-### 1. Lead Qualification Agent (Form Submissions)
-- Trigger: On form submission
-- Sends data via HTTP request
-- Processed by the AI Agent (Google Gemini)
-- Tools used:
-  - Google Gemini (for lead scoring)
-  - Call another n8n workflow (for classification and notification)
-  - Gmail (to send scored lead emails)
+- ✅ **Real-Time Form Integration**  
+  Instantly captures form submissions via HTTP trigger in n8n.
 
-### 2. Qualified Lead Classifier AND Notifier
-- Triggered by the first workflow
-- Uses Google Gemini to evaluate lead details
-- Decision logic (`IF` node) checks the type of lead
-- Sends Gmail notifications based on the classification
+- 🧠 **AI-Powered Lead Scoring**  
+  Leverages Google Gemini to assess and qualify leads intelligently.
 
-## Stack
+- 🔀 **Smart Routing & Classification**  
+  Routes high-quality leads to the right teams using dynamic workflows.
 
-- **n8n**: Workflow automation
-- **Google Gemini**: AI model for lead scoring and classification
-- **Gmail API**: For sending automated notifications
+- 📩 **Instant Notifications**  
+  Sends personalized emails to stakeholders using the Gmail API.
 
-## Impact
+- 🧩 **Modular & Scalable Workflows**  
+  Separated into classification and notification pipelines for flexibility and easy updates.
 
-- **500+ leads/week** processed with minimal manual effort
-- **80% reduction** in lead triage time
-- **Stakeholder response time reduced from 1 hour to 12 minutes**
+---
 
+## 🛠️ Workflow Architecture
+
+### 📥 1. Lead Qualification Agent
+**Trigger**: Form submission via HTTP node  
+**Actions**:
+- Extract lead details  
+- Score message using Google Gemini  
+- Invoke downstream workflow for classification + routing
+
+### 📤 2. Lead Classifier & Notifier
+**Trigger**: Workflow call from the Qualification Agent  
+**Steps**:
+- Analyze lead intent and quality with Google Gemini  
+- Apply classification logic (`IF` / `SWITCH`)  
+- Notify relevant stakeholders using Gmail
+
+---
+
+## 🧱 Tech Stack
+
+| Tool           | Purpose                             |
+|----------------|-------------------------------------|
+| 🧩 **n8n**      | Workflow automation engine          |
+| 🤖 **Gemini**   | AI-based message classification     |
+| 📧 **Gmail API**| Sends automated email alerts        |
+
+---
+
+## 📈 Results
+
+- 📊 **500+ leads/week** processed autonomously  
+- ⏱️ **80% reduction** in triage time  
+- ⚡ **Response time cut from 1 hour → 12 minutes**
+
+---
+
+## 🏗️ Ideal For
+
+- Lead-heavy organizations  
+- Sales enablement and CRM workflows  
+- Agencies managing multiple intake channels  
+- Teams looking to scale without hiring
+
+---
 
